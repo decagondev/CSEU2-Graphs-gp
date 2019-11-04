@@ -11,3 +11,12 @@
 - BFT Iplementation [WE DO]
 - Convert BFT to DFT [WE DO]
 - Wrapup
+
+## Day 2 Agenda - Breaking down Graph Problems
+- BFS / DFS solution [I DO]
+- 5 min break
+- how to solve any graph problem [WE DO]
+- whiteboard challenge [YOU DO]
+- 5 min break
+- Word ladder livecode [I DO]
+- wrapup
