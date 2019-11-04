@@ -17,7 +17,7 @@
 ## Adjacency List & Adjacency Matrix
 The two most common ways to represent graphs in code are adjacency lists and adjacency matrices, each with its own strengths and weaknesses. When deciding on a graph implementation, it's important to understand the type of data and operations you will be using.
 
-![Different ways to represent a graph](img/representations.PNG)
+![Different ways to represent a graph](img/representations.png)
 
 ### Implement a Graph
 
