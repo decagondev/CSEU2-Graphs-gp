@@ -49,7 +49,7 @@ class Graph:
         while q.size() > 0:
             # Dequeue the first vertex
             v = q.dequeue()
-            # if that vertex has not been vidited
+            # if that vertex has not been visited
             if v not in visited:
                 # mark it as visited (printing for a representation)
                 print(v)
