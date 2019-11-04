@@ -15,7 +15,7 @@
     - Heavy traffic vs. light traffic
 
 ## Adjacency List & Adjacency Matrix
-The two most common ways to represent graphs in code are adjacency lists and adjacency matrices, each with its own strengths and weaknesses. When deciding on a graph implementation, it's important to understand the type of data and operations you will be using.
+The two most common ways to represent graphs in code are *adjacency lists* and *adjacency matrices*, each with its own strengths and weaknesses. When deciding on a graph implementation, it's important to understand the type of data and operations you will be using.
 
 ![Different ways to represent a graph](img/representations.png)
 
@@ -54,7 +54,7 @@ This is the recommended approach for our graph projects.
 ## BFT
 
 ### Synopsis
-We can use BFT to traverse a graph, starting at levels closest to the root and finishing at thos furthest away.
+We can use BFT to traverse a graph, starting at levels closest to the root and finishing at those furthest away.
 - Good to use when solving *Shortest Path* problems and other scenarios where you know that the *solution is not far from the root*
 
 ### Algorithm
