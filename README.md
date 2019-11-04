@@ -79,3 +79,92 @@ Good to use when solving a problem where you know the *solution is very far from
     a. If unexplored, adjacent vertex
         i. explore adjacent vertex
     b. Mark explored once all adjacent vertices have been explored ( remove from a stack )
+
+## Graph traversal
+
+```
+    q = []
+    visited = {}
+
+    # enqueue starting vertex ID
+    q = [1]
+    visited = {}
+
+    # Dequeue first vertex
+    q = []
+    visited = {}
+
+    1
+
+    # check if it has been visited ( no )
+    q = []
+    visited = {}
+
+    1
+
+    # mark as visited and enqueue it's neighbors
+    q = [2]
+    visited = {1}
+
+    # Dequeue first vertex
+    q = []
+    visited = {1}
+
+    2
+
+    # check if it has been visited ( no )
+    q = []
+    visited = {1}
+
+    2
+
+    # mark as visited and enqueue it's neighbors
+    q = [3, 4]
+    visited = {1, 2}
+
+    # Dequeue first vertex
+    q = [4]
+    visited = {1, 2}
+
+    3
+
+    # check if it has been visited ( no )
+    q = [4]
+    visited = {1, 2}
+
+    3
+
+    # mark as visited and enqueue it's neighbors
+    q = [4, 5]
+    visited = {1, 2, 3}
+
+    # we will be skipping 4, 6 and 7 and moving to 5
+
+    
+    # Dequeue first vertex
+    q = []
+    visited = {1, 2, 3, 4}
+
+    5
+
+    # check if it has been visited ( no )
+    q = []
+    visited = {1, 2, 3, 4}
+
+    5
+
+    # mark as visited and enqueue it's neighbors
+    q = [3]
+    visited = {1, 2, 3, 4, 5}
+
+    # Dequeue first vertex
+    q = []
+    visited = {1, 2, 3, 4, 5}
+
+    3
+
+    # check if it has been visited ( yes )
+    q = []
+    visited = {1, 2, 3, 4, 5}
+
+```

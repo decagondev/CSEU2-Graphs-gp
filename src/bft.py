@@ -35,4 +35,11 @@ class Graph:
 
     # BFT
     def bft(self, starting_vertex_id):
+        # create an empty queue and enqueue the starting vertex ID
+        # create a set to store the visited vertices
+        # while the queue is not empty
+            # Dequeue the first virtex
+            # if that vertex has not been vidited
+                # mark it as visited
+                # then add all of it's neighbors to the back of the queue
         pass
