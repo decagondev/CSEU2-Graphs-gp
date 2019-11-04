@@ -2,13 +2,16 @@
 
 ## BFT
 
+### Synopsis
+We can use BFT to traverse a graph, starting at levels closest to the root and finishing at thos furthest away.
+- Good to use when solving *Shortest Path* problems and other scenarios where you know that the *solution is not far from the root*
+
 ### Algorithm
 1. Begin at the starting Vertex (s)
 2. Explore Vertex
     a. while +1 unscheduled vertices adjacent to current vertex
         i. Schedule adjacent vertex to be explored in a *queue*
 3. Mark vertex as explored ( Remove from queue )
-
 
 
 ## Implement a Graph
