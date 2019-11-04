@@ -13,6 +13,21 @@ We can use BFT to traverse a graph, starting at levels closest to the root and f
         i. Schedule adjacent vertex to be explored in a *queue*
 3. Mark vertex as explored ( Remove from queue )
 
+## DFT
+
+### Synopsis
+Algorithm used to search a graph. Explores all possible paths to find one with the smallest weight, *traversing down a branch before traversing accross nodes at the same level as the root node*. It never revisits nodes.
+
+We can use DFT to *search each branch to it's deepest level* before exploring another branch.
+
+Good to use when solving a problem where you know the *solution is very far from the root*
+
+### Algorithm
+1. Begin at the starting Vertex (s)
+2. Explore Vertex using a *stack*
+    a. If unexplored, adjacent vertex
+        i. explore adjacent vertex
+    b. Mark explored once all adjacent vertices have been explored ( remove from a stack )
 
 ## Implement a Graph
 
