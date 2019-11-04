@@ -1,5 +1,56 @@
 # CSEU2 Graphs GP
 
+## What is a graph and how is it represented?
+
+*Terminology:*
+
+- Directed vs. Undirected
+- Twitter follow (directed) vs. Facebook friendship (undirected)
+- Undirected edge is the same as bi-directional edge
+- Cyclic vs. Acyclic
+- Dense vs. Sparse
+    - Subway map (sparse)
+    - Flight map (dense)
+- Weighted vs. Unweighted
+- Heavy traffic vs. light traffic
+
+## Adjacency List & Adjacency Matrix
+The two most common ways to represent graphs in code are adjacency lists and adjacency matrices, each with its own strengths and weaknesses. When deciding on a graph implementation, it's important to understand the type of data and operations you will be using.
+
+![Different ways to represent a graph](img/representations.PNG)
+
+### Implement a Graph
+
+#### Using an Adjacency Matrix 
+
+One way of representing connections between verts is with a matrix that
+records `1` for a connection or `0` for no connection.
+
+```
+    A B C D
+  +--------
+A | 0 0 1 1
+B | 0 0 1 0
+C | 1 0 0 1
+D | 1 0 1 0
+```
+
+In the above example B connects to C, but C does not connect back to B.
+
+#### Using an Adjacency List
+
+Another way is to store a list of verts that a particular vert connects
+to.
+
+```
+A -> [ C D ]
+B -> [ C ]
+C -> [ A D ]
+D -> [ A C ]
+```
+
+This is the recommended approach for our graph projects.
+
 ## BFT
 
 ### Synopsis
@@ -28,35 +79,3 @@ Good to use when solving a problem where you know the *solution is very far from
     a. If unexplored, adjacent vertex
         i. explore adjacent vertex
     b. Mark explored once all adjacent vertices have been explored ( remove from a stack )
-
-## Implement a Graph
-
-### Using an Adjacency Matrix 
-
-One way of representing connections between verts is with a matrix that
-records `1` for a connection or `0` for no connection.
-
-```
-    A B C D
-  +--------
-A | 0 0 1 1
-B | 0 0 1 0
-C | 1 0 0 1
-D | 1 0 1 0
-```
-
-In the above example B connects to C, but C does not connect back to B.
-
-### Using an Adjacency List
-
-Another way is to store a list of verts that a particular vert connects
-to.
-
-```
-A -> [ C D ]
-B -> [ C ]
-C -> [ A D ]
-D -> [ A C ]
-```
-
-This is the recommended approach for our graph projects.
