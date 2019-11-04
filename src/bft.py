@@ -1,3 +1,5 @@
+
+from util import Stack, Queue
 # lets code a bft
 """
     Remember to follow our problem solving framework
@@ -36,10 +38,19 @@ class Graph:
     # BFT
     def bft(self, starting_vertex_id):
         # create an empty queue and enqueue the starting vertex ID
+        q = Queue()
+        q.enqueue(starting_vertex_id)
         # create a set to store the visited vertices
+        visited = set()
         # while the queue is not empty
-            # Dequeue the first virtex
+        while q.size() > 0:
+            # Dequeue the first vertex
+            v = q.dequeue()
             # if that vertex has not been vidited
-                # mark it as visited
+            if v not in visited:
+                # mark it as visited (printing for a representation)
+                print(v)
+                visited.add(v)
                 # then add all of it's neighbors to the back of the queue
-        pass
+                for next_vertex in self.vertices[v]:
+                    q.enqueue(next_vertex)
