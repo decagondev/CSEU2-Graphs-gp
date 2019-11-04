@@ -1,5 +1,13 @@
 # CSEU2 Graphs GP
 
+## BFT
+
+### Algorithm
+1. Begin at the starting Vertex (s)
+2. Explore Vertex
+    a. while +1 unscheduled vertices adjacent to current vertex
+        i. Schedule adjacent vertex to be explored in a *queue*
+3. Mark vertex as explored ( Remove from queue )
 
 
 
