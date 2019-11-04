@@ -57,3 +57,25 @@ class Graph:
                 # then add all of it's neighbors to the back of the queue
                 for next_vertex in self.vertices[v]:
                     q.enqueue(next_vertex)
+
+    # DFT
+    def dft(self, starting_vertex_id):
+        # create an empty stack and push the starting vertex ID
+        s = Stack()
+        s.push(starting_vertex_id)
+        # create a set to store the visited vertices
+        visited = set()
+        # while the stack is not empty
+        while s.size() > 0:
+            # pop the first vertex
+            v = s.pop()
+            # if that vertex has not been visited
+            if v not in visited:
+                # mark it as visited (printing for a representation)
+                print(v)
+                visited.add(v)
+                # then add all of it's neighbors to the top of the stack
+                for next_vertex in self.vertices[v]:
+                    s.push(next_vertex)
+
+    
