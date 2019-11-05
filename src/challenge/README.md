@@ -37,3 +37,19 @@ beginWord = "hungry"
 endWord = "happy"
 None
 ```
+
+### The Steps
+
+*Step 1. Translate the problem into graph terminology*
+- Similar to Step 1 of Problem solving
+- "Shortest" should make you think of a specific seach algorithm
+- "Transformation sequence" should make you think of some sort of path
+- "Word" What should this be represented with?
+- "One letter change" what should this be represented with?
+
+*Step 2. Build your graph*
+- What graph operations are necessary?
+- Need to define a function to get all edges?
+    
+*Step 3. Traverse your graph*
+- Run some search algorithm to get the shortest path
