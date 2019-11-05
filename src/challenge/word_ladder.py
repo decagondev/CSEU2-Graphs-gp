@@ -11,6 +11,8 @@ word_set = set()
 for word in words:
       word_set.add(word.lower())
 
+letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+
 
 # implement the function 
 # along with any helper functions you need
