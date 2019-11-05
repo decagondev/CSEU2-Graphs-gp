@@ -90,13 +90,70 @@ class Graph:
                     s.push(next_vertex)
 
     def dft_recursive(self, start_vert, visited=None):
-        pass
+        # if the visited structure is set to None
+        if visited is None:
+            # create a new set for visited
+            visited = set()
+        
+        # add a starting vertex to the visited set
+        visited.add(start_vert)
+        # print the start vertex
+        print(start_vert)
+        # loop over every child vertex in vertices set at the start vertex
+        for child_vert in self.vertices[start_vert]:
+            # if child vertex is not in visited
+            if child_vert not in visited:
+                # do a recursive call to dft_recursive
+                # using the child vertex and the current visited set as arguments
+                self.dft_recursive(child_vert, visited)
 
     def dfs(self, start_vert, target_value, visited=None):
-        pass
+        # if visited is None
+        if visited is None:
+            # create a new set of visited
+            visited = set()
+        # add start vert to visited
+        visited.add(start_vert)
+        # if the start vert is equal to the target value
+        if start_vert == target_value:
+            # return True
+            return True
+        # loop over every child vertex in vertices set at the start vertex
+        for child_vert in self.vertices[start_vert]:
+            # if child vert is not in visited
+            if child_vert not in visited:
+                # if the recursive call to dfs
+                if self.dfs(child_vert, target_value, visited):
+                    # return True
+                    return True
+        # Return False
+        return False
 
     def bfs(self, starting_vertex_id, target_value):
-        pass
+        # create a queue to hold the vertex ids
+        q = Queue()
+        # enqueue the start vertex id
+        q.enqueue(starting_vertex_id)
+        # create an empty visited set
+        visited = set()
+        # while the queue is not empty
+        while q.size() > 0:
+            # set vert to the dequeued element
+            vert = q.dequeue()
+            # if the vert is not in visited
+            if vert not in visited:
+                # if vert is target value
+                if vert == target_value:
+                    # return True
+                    return True
+                # add the vert to visited set
+                visited.add(vert)
+                # loop over next vert in the vertices at the index of vert
+                for next_vert in self.vertices[vert]:
+                    # enqueue the next vert
+                    q.enqueue(next_vert)
+        # return False
+        return False
 
     def dfs_r_path(self, start_vert, target_value, visited=None, path=None):
         pass
