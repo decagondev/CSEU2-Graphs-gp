@@ -42,10 +42,10 @@ None
 
 *Step 1. Translate the problem into graph terminology*
 - Similar to Step 1 of Problem solving
-- "Shortest" should make you think of a specific seach algorithm
+- "Shortest" should make you think of bfs
 - "Transformation sequence" should make you think of some sort of path
-- "Word" What should this be represented with?
-- "One letter change" what should this be represented with?
+- "Word" represented with a Vertex
+- "One letter change" represented with an edge
 
 *Step 2. Build your graph*
 - What graph operations are necessary?
