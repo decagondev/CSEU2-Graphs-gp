@@ -20,3 +20,12 @@
 - 5 min break
 - Word ladder livecode [I DO]
 - wrapup
+
+## Day 3 Agenda - Social Graph
+- Talk a little about the Earliest Ancestor problem [I DO]
+- Planning Island Problem [WE DO]
+- 5 min break
+- Code up a solution to the island problem [YOU DO]
+- 5 min break
+- Randomness and Social Networks
+- wrap up
