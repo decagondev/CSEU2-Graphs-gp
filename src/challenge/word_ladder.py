@@ -16,3 +16,8 @@ for word in words:
 # along with any helper functions you need
 def find_word_ladder(beginWord, endWord):
     pass
+
+
+
+if __name__ == '__main__':
+    print(find_word_ladder("sail", "boat"))
