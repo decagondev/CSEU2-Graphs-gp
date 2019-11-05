@@ -1,0 +1,1 @@
+# we will write a simple user/friendship generator
