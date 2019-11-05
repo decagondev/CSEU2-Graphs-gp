@@ -14,7 +14,7 @@
 
 ## Day 2 Agenda - Breaking down Graph Problems
 - BFS / DFS solution [I DO]
-- 5 min break
+- 5 min break (when needed)
 - how to solve any graph problem [WE DO]
 - whiteboard challenge [YOU DO]
 - 5 min break
