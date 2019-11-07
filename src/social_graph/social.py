@@ -35,12 +35,13 @@ class SocialGraph:
         Creates a bi-directional friendship
         """
         if userID == friendID:
-            print("WARNING: You cannot be friends with yourself")
+            return False
         elif friendID in self.friendships[userID] or userID in self.friendships[friendID]:
-            print("WARNING: Friendship already exists")
+            return False
         else:
             self.friendships[userID].add(friendID)
             self.friendships[friendID].add(userID)
+            return True
             
     def addUser(self, name):
         """
@@ -96,7 +97,46 @@ class SocialGraph:
             friendship = possibleFriendships[i]
             # addfriendship of friendship[0] and friendship[1]
             self.addFriendship(friendship[0], friendship[1])
-            
+
+    def populateGraphLinear(self, numUsers, avgFriendships):
+        # Reset graph
+        self.lastID = 0
+        self.users = {}
+        self.friendships = {}
+
+        # Add users
+        # loop over a range of 0 to numUsers
+        for i in range(numUsers):
+            # add user to the graph
+            self.addUser(f"User {i + 1}")
+
+        # friendships
+
+        # get the target friendships via (numUsers * avgFriendships)
+        targetFriendships = (numUsers * avgFriendships)
+        # set a counter for total friendships
+        totalFriendships = 0
+        # set a counter for collisions
+        collisions = 0
+
+        # while total friendships is less than the target friendships
+        while totalFriendships < targetFriendships:
+            # set userID to a random number between 1 and the lastID
+            userID = random.randint(1, self.lastID)
+            # set friendID to a random number between 1 and the lastID
+            friendID = random.randint(1, self.lastID)
+            # if the return of add friendship of userID and friendID is true
+            if self.addFriendship(userID, friendID):
+                # increment total friendships
+                totalFriendships += 2
+            # otherwise
+            else:
+                # increment collisions
+                collisions += 1
+        # print collision
+        print(f"COLLISIONS: {collisions}")
+
+
     def getAllSocialPaths(self, userID):
         """
         Takes a user's userID as an argument
@@ -140,17 +180,31 @@ class SocialGraph:
 if __name__ == '__main__':
     sg = SocialGraph()
     start_time = time.time()
-    sg.populateGraph(1000, 5)
+    numUsers = 2000
+    avgFriendships = 190
+    # sg.populateGraph(numUsers, avgFriendships)
+    
+    sg.populateGraphLinear(numUsers, avgFriendships)
     end_time = time.time()
-    connections = sg.getAllSocialPaths(1)
-    print(f"Users in extended social network: {len(connections) - 1}")
+    print(f"Linear runtime: {end_time - start_time} seconds")
 
-    total_sp = 0
+    start_time = time.time()
+    sg.populateGraph(numUsers, avgFriendships)
+    end_time = time.time()
+    print(f"Quadratic runtime: {end_time - start_time} seconds")
 
-    for userID in connections:
-        total_sp += len(connections[userID])
 
-    print(f"Average length of social path: {total_sp / len(connections)}")
+
+
+    # connections = sg.getAllSocialPaths(1)
+    # print(f"Users in extended social network: {len(connections) - 1}")
+
+    # total_sp = 0
+
+    # for userID in connections:
+    #     total_sp += len(connections[userID])
+
+    # print(f"Average length of social path: {total_sp / len(connections)}")
     # print(sg.friendships)
     # print(connections)
     # print (f"runtime: {end_time - start_time} seconds")
