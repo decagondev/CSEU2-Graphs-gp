@@ -36,4 +36,4 @@
 - Breakdown of the Graph Problem in Social Graph [WE DO]
 - Randomness [WE DO]
 - 5 min break
-- Adventure Maze Intro (Wrapup) [I DO]
+- SC Adventure Maze Intro (Wrapup) [I DO]

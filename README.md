@@ -168,3 +168,31 @@ Good to use when solving a problem where you know the *solution is very far from
     visited = {1, 2, 3, 4, 5}
 
 ```
+
+### Matrix Vs List
+
+*note that sparse means that you have very few edges, and dense means many edges, or almost complete graph.*
+
+In a complete graph you have `n(n−1)/2` edges, where n is the number of nodes.
+
+Now, when we use matrix representation we allocate n×n matrix to store node-connectivity information, e.g., `M[i][j]=1` if there is edge between nodes `i` and `j`, otherwise `M[i][j]=0`.
+But if we use adjacency list then we have an array of nodes and each node points to its adjacency list containing *ONLY* its neighboring nodes.
+
+Now if a graph is sparse and we use matrix representation then most of the matrix cells remain unused which leads to the waste of memory. Thus we usually don't use *matrix* representation for sparse graphs. We prefer *adjacency list*.
+
+But if the graph is dense then the number of edges is close to (the complete) *n(n−1)/2*, or to *n2* if the graph is directed with self-loops. Then there is no advantage of using adjacency list over matrix.
+
+In terms of space complexity
+Adjacency matrix: `O(n^2)`
+Adjacency list: `O(n+m)`
+where n is the number nodes, m is the number of edges.
+
+When the graph is undirected tree then
+Adjacency matrix: `O(n2)`
+Adjacency list: `O(n+n)` is `O(n)` (better than n2)
+
+When the graph is directed, complete, with self-loops then
+Adjacency matrix: `O(n2)`
+Adjacency list: `O(n+n2)` is `O(n2)` (no difference)
+
+And finally, when you implement using matrix, checking if there is an edge between two nodes takes `O(1)` times, while with an adjacency list, it may take `linear` time in n.
