@@ -2,6 +2,23 @@ import random
 import math
 import time
 
+class Queue:
+    def __init__(self):
+        self.storage = []
+    
+    def enqueue(self, value):
+        self.storage.append(value)
+
+    def dequeue(self):
+        if (self.size()) > 0:
+            return self.storage.pop(0)
+        else:
+            return None
+
+    def size(self):
+        return len(self.storage)
+
+
 
 class User:
     def __init__(self, name):
@@ -88,16 +105,52 @@ class SocialGraph:
         The key is the friend's ID and the value is the path.
         """
         visited = {}  # Note that this is a dictionary, not a set
-        # !!!! IMPLEMENT ME
+        # create a queue
+        q = Queue()
+        # enqueue the user id as a list
+        q.enqueue([userID])
+
+        # while queue is not empty
+        while q.size() > 0:
+            # dequeue to path variable
+            path = q.dequeue()
+            # set new user id to the last item in path
+            newUserID = path[-1]
+            
+            # check if the new user id is not in the visited structure
+            if newUserID not in visited:
+                # set the new user ids path in visited
+                visited[newUserID] = path
+
+                # loop over each friend id in the friendships at the index of new user id
+                for friendID in self.friendships[newUserID]:
+                    # check that the friend id is not in visited
+                    if friendID not in visited:
+                        # create a copy of the path
+                        new_path = list(path)
+                        # append the friend id to the copy of the path
+                        new_path.append(friendID)
+                        # enqueue the copy of the path
+                        q.enqueue(new_path)
+       
+        # return the visited data structure
         return visited
 
 
 if __name__ == '__main__':
     sg = SocialGraph()
     start_time = time.time()
-    sg.populateGraph(10, 2)
+    sg.populateGraph(1000, 5)
     end_time = time.time()
-    print (f"runtime: {end_time - start_time} seconds")
     connections = sg.getAllSocialPaths(1)
-    print(sg.friendships)
-    print(connections)
+    print(f"Users in extended social network: {len(connections) - 1}")
+
+    total_sp = 0
+
+    for userID in connections:
+        total_sp += len(connections[userID])
+
+    print(f"Average length of social path: {total_sp / len(connections)}")
+    # print(sg.friendships)
+    # print(connections)
+    # print (f"runtime: {end_time - start_time} seconds")

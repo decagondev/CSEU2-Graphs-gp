@@ -34,6 +34,6 @@
 - Talk a little about Social Graph [I DO]
 - 5 min break
 - Breakdown of the Graph Problem in Social Graph [WE DO]
-- Randomness [WE DO]
 - 5 min break
+- Randomness [WE DO]
 - SC Adventure Maze Intro (Wrapup) [I DO]
